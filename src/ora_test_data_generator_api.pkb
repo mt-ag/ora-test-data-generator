@@ -27,8 +27,8 @@ create or replace package body ora_test_data_generator_api as
   begin
     select count(*)
       into l_count
-      from lct_fake_data
-     where fake_category = p_category
+      from ora_test_data_generator_values
+     where otdg_category = p_category
     ;
 
     return l_count;
@@ -45,16 +45,40 @@ create or replace package body ora_test_data_generator_api as
     l_value_count  := get_rowcount(p_category);
     l_random_index := round(dbms_random.value() * l_value_count - 1); -- starting from 0 for offset
 
-    select fake_value
+    select otdg_value
       into l_value
-      from lct_fake_data
-     where fake_category = p_category
-     order by fake_value
+      from ora_test_data_generator_values
+     where otdg_category = p_category
+     order by otdg_value
     offset l_random_index rows fetch next 1 rows only
     ;
 
     return l_value;
   end get_random_value;
+
+  function replace_hashes_with_random_numbers (
+    pi_value in t_value
+  ) return t_value
+  as
+    l_value   t_value := pi_value;
+    l_numbers varchar2(40) := regexp_replace(to_char(dbms_random.value()), ',((0)+)?', '');
+  begin
+    for i in 1..length(l_value) 
+    loop
+      if substr(l_value, i, 1) = '#' then
+        case 
+            when i > 1 and i < length(l_value) then
+              l_value := substr(l_value, 1, i - 1) || substr(l_numbers, i, 1) || substr(l_value, i + 1, length(l_value) - i);
+            when i = 1 then
+              l_value := substr(l_numbers, i, 1) || substr(l_value, i + 1, length(l_value) - i);
+            when i = length(l_value) then
+              l_value := substr(l_value, 1, i - 1) || substr(l_numbers, i, 1);
+        end case;
+      end if;
+    end loop;
+
+    return l_value;
+  end replace_hashes_with_random_numbers;
 
   /*
     Public
@@ -131,6 +155,84 @@ create or replace package body ora_test_data_generator_api as
 
     return l_name;
   end get_full_name;
+
+  function get_job_title
+    return t_value
+  as
+  begin
+    return get_random_value(c_job_title);
+  end get_job_title;
+
+  function get_company_name
+    return t_value
+  as
+  begin
+    return get_random_value(c_company_name);
+  end get_company_name;
+
+  function get_email_provider
+    return t_value
+  as
+  begin
+    return get_random_value(c_email_provider);
+  end get_email_provider;
+
+  function get_domain_suffix
+    return t_value
+  as
+  begin
+    return get_random_value(c_domain_suffix);
+  end get_domain_suffix;
+
+  function get_phone_number
+    return t_value
+  as
+  begin
+    return replace_hashes_with_random_numbers(get_random_value(c_phone_number));
+  end get_phone_number;
+
+  function get_credit_card_number
+    return t_value
+  as
+  begin
+    return replace_hashes_with_random_numbers(get_random_value(c_credit_card_number));
+  end get_credit_card_number;
+
+  function get_street_name
+    return t_value
+  as
+  begin
+    return get_random_value(c_street_name);
+  end get_street_name;
+
+  function get_currency_name
+    return t_value
+  as
+  begin
+    return get_random_value(c_currency_name);
+  end get_currency_name;
+
+  function get_currency_symbol
+    return t_value
+  as
+  begin
+    return get_random_value(c_currency_symbol);
+  end get_currency_symbol;
+
+  function get_quote
+    return t_value
+  as
+  begin
+    return get_random_value(c_quote);
+  end get_quote;
+
+  function get_email_address
+    return t_value
+  as
+  begin
+    return get_first_name_no_accent() || '.' || get_last_name_no_accent() || '@' || get_email_provider() || '.' || get_domain_suffix();
+  end get_email_address;
+
 
 
   
