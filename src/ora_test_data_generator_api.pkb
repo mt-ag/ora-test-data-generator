@@ -11,8 +11,13 @@ create or replace package body ora_test_data_generator_api as
   c_phone_number         constant t_category := 'phone_number';
   c_credit_card_number   constant t_category := 'credit_card_number';
   c_street_name          constant t_category := 'street_name';
+  c_zip_code             constant t_category := 'zip_code';
+  c_state_us             constant t_category := 'state_us';
+  c_currency_code        constant t_category := 'currency_code';
   c_currency_name        constant t_category := 'currency_name';
   c_currency_symbol      constant t_category := 'currency_symbol';
+  c_country              constant t_category := 'country';
+  c_country_code         constant t_category := 'country_code';
   c_quote                constant t_category := 'quote';
 
   /*
@@ -205,6 +210,14 @@ create or replace package body ora_test_data_generator_api as
     return get_random_value(c_street_name);
   end get_street_name;
 
+  function get_currency_code
+    return t_value
+  as
+  begin
+    return get_random_value(c_currency_code);
+  end get_currency_code;
+
+
   function get_currency_name
     return t_value
   as
@@ -218,6 +231,20 @@ create or replace package body ora_test_data_generator_api as
   begin
     return get_random_value(c_currency_symbol);
   end get_currency_symbol;
+
+  function get_country
+    return t_value
+  as
+  begin
+    return get_random_value(c_country);
+  end get_country;
+
+  function get_country_code
+    return t_value
+  as
+  begin
+    return get_random_value(c_country_code);
+  end get_country_code;
 
   function get_quote
     return t_value

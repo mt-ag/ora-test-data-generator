@@ -1868,95 +1868,6 @@ declare
       'Lesch and Sons'
     );
 
-  c_country constant apex_t_varchar2 :=
-    apex_t_varchar2(
-      'Gabon',
-      'Congo',
-      'Norfolk Island',
-      'Qatar',
-      'Syrian Arab Republic',
-      'Wallis and Futuna',
-      'Somalia',
-      'Saint Barthelemy',
-      'Comoros',
-      'Sri Lanka',
-      'Czech Republic',
-      'Christmas Island',
-      'Macao',
-      'Montenegro',
-      'Anguilla',
-      'Canada',
-      'Mayotte',
-      'Tajikistan',
-      'Afghanistan',
-      'Liechtenstein',
-      'Cocos (Keeling) Islands',
-      'Angola',
-      'Bahrain',
-      'Dominican Republic',
-      'Croatia',
-      'Latvia',
-      'Virgin Islands, U.S.',
-      'United Kingdom',
-      'Brazil',
-      'Spain',
-      'Mongolia',
-      'Montserrat',
-      'Estonia',
-      'Benin',
-      'Guinea',
-      'Guinea-Bissau',
-      'Greece',
-      'Lao Peoples Democratic Republic',
-      'Puerto Rico',
-      'Slovakia (Slovak Republic)',
-      'United States of America',
-      'Switzerland',
-      'Costa Rica',
-      'Mauritius',
-      'Nigeria',
-      'Russian Federation',
-      'Germany',
-      'Antigua and Barbuda',
-      'Albania',
-      'Moldova',
-      'Hongkong',
-      'Senegal',
-      'Tanzania',
-      'British Indian Ocean Territory (Chagos Archipelago)',
-      'Central African Republic',
-      'New Caledonia',
-      'Burundi',
-      'Panama',
-      'Azerbaijan',
-      'Namibia',
-      'French Southern Territories',
-      'Vanuatu',
-      'Ethiopia',
-      'Burkina Faso',
-      'Tunisia',
-      'Mozambique',
-      'Belarus',
-      'Saint Kitts and Nevis',
-      'Hungary',
-      'Indonesia',
-      'Cyprus',
-      'Ecuador',
-      'Saint Martin',
-      'Nauru',
-      'Faroe Islands',
-      'Iran',
-      'Bolivia',
-      'Pitcairn Islands',
-      'France',
-      'Paraguay',
-      'Isle of Man',
-      'Sierra Leone',
-      'Monaco',
-      'Belize',
-      'Trinidad and Tobago'
-    );
-
   c_email_provider constant apex_t_varchar2 :=
     apex_t_varchar2(
       'aim',
@@ -2163,6 +2074,57 @@ declare
       '#####-####'
     );
 
+  c_state_us constant apex_t_varchar2 :=
+    apex_t_varchar2(
+      'Oklahoma',
+      'South Dakota',
+      'Massachusetts',
+      'Minnesota',
+      'Rhode Island',
+      'Florida',
+      'Delaware',
+      'Utah',
+      'Maryland',
+      'Pennsylvania',
+      'West Virginia',
+      'Nevada',
+      'New York',
+      'Alabama',
+      'Arizona',
+      'Wyoming',
+      'Washington',
+      'Nebraska',
+      'Mississippi',
+      'Missouri',
+      'Arkansas',
+      'Vermont',
+      'North Dakota',
+      'Iowa',
+      'Georgia',
+      'Kentucky',
+      'Wisconsin',
+      'New Hampshire',
+      'Hawaii',
+      'Idaho',
+      'Michigan',
+      'Ohio',
+      'Colorado',
+      'Kansas',
+      'Maine',
+      'Alaska',
+      'Indiana',
+      'South Carolina',
+      'Oregon',
+      'Illinois',
+      'Tennessee',
+      'California',
+      'Virginia',
+      'Texas',
+      'Montana',
+      'New Jersey',
+      'North Carolina'
+    );
+
   c_currency_code constant apex_t_varchar2 :=
     apex_t_varchar2(
       'IRR',
@@ -2359,6 +2321,189 @@ declare
       'Lek',
       '¥',
       '؋'
+    );
+
+  c_country constant apex_t_varchar2 :=
+    apex_t_varchar2(
+      'Argentina',
+      'Peru',
+      'Colombia',
+      'Chile',
+      'Uruguay',
+      'Gabon',
+      'Congo',
+      'Norfolk Island',
+      'Qatar',
+      'Syrian Arab Republic',
+      'Wallis and Futuna',
+      'Somalia',
+      'Saint Barthelemy',
+      'Comoros',
+      'Sri Lanka',
+      'Czech Republic',
+      'Christmas Island',
+      'Macao',
+      'Montenegro',
+      'Anguilla',
+      'Canada',
+      'Mayotte',
+      'Tajikistan',
+      'Afghanistan',
+      'Liechtenstein',
+      'Cocos (Keeling) Islands',
+      'Angola',
+      'Bahrain',
+      'Dominican Republic',
+      'Croatia',
+      'Latvia',
+      'Virgin Islands, U.S.',
+      'United Kingdom',
+      'Brazil',
+      'Spain',
+      'Mongolia',
+      'Montserrat',
+      'Estonia',
+      'Benin',
+      'Guinea',
+      'Guinea-Bissau',
+      'Greece',
+      'Lao Peoples Democratic Republic',
+      'Puerto Rico',
+      'Slovakia (Slovak Republic)',
+      'United States of America',
+      'Switzerland',
+      'Costa Rica',
+      'Mauritius',
+      'Nigeria',
+      'Russian Federation',
+      'Germany',
+      'Antigua and Barbuda',
+      'Albania',
+      'Romania',
+      'Moldova',
+      'Senegal',
+      'Tanzania',
+      'British Indian Ocean Territory (Chagos Archipelago)',
+      'Central African Republic',
+      'New Caledonia',
+      'Burundi',
+      'Panama',
+      'Azerbaijan',
+      'Namibia',
+      'French Southern Territories',
+      'Vanuatu',
+      'Ethiopia',
+      'Burkina Faso',
+      'Tunisia',
+      'Mozambique',
+      'Belarus',
+      'Saint Kitts and Nevis',
+      'Hungary',
+      'Indonesia',
+      'Cyprus',
+      'Ecuador',
+      'Saint Martin',
+      'Nauru',
+      'Faroe Islands',
+      'Iran',
+      'Bolivia',
+      'Pitcairn Islands',
+      'France',
+      'Paraguay',
+      'Isle of Man',
+      'Sierra Leone',
+      'Monaco',
+      'Belize',
+      'Trinidad and Tobago'
+    );
+
+  c_country_code apex_t_varchar2 :=
+    apex_t_varchar2(
+      'MS',
+      'TW',
+      'LR',
+      'HU',
+      'PK',
+      'GQ',
+      'GG',
+      'SZ',
+      'MQ',
+      'AS',
+      'WS',
+      'BJ',
+      'NR',
+      'FJ',
+      'ZM',
+      'CR',
+      'BO',
+      'AW',
+      'AI',
+      'GW',
+      'PF',
+      'MO',
+      'PE',
+      'UZ',
+      'JM',
+      'KH',
+      'RW',
+      'GN',
+      'IN',
+      'MR',
+      'MC',
+      'KG',
+      'SA',
+      'SV',
+      'TZ',
+      'ME',
+      'BB',
+      'IE',
+      'LY',
+      'TM',
+      'SN',
+      'MA',
+      'BN',
+      'ML',
+      'LV',
+      'SM',
+      'HT',
+      'NF',
+      'TD',
+      'UA',
+      'FM',
+      'KM',
+      'CN',
+      'GF',
+      'MT',
+      'RO',
+      'PA',
+      'FI',
+      'BG',
+      'KZ',
+      'PN',
+      'BL',
+      'NO',
+      'IM',
+      'AQ',
+      'MV',
+      'LA',
+      'NU',
+      'LS',
+      'CW',
+      'CF',
+      'GT',
+      'TL',
+      'RU',
+      'BQ',
+      'GB',
+      'BV',
+      'TC',
+      'EC',
+      'NG',
+      'AD',
+      'RE',
+      'SL',
+      'CL',
+      'ER'
     );
 
 
@@ -2891,6 +3036,7 @@ begin
      from table(c_country)
   ;
 
+
   insert into ora_test_data_generator_values
     (otdg_category, otdg_value)
   select 'email_provider'
@@ -2935,6 +3081,20 @@ begin
 
   insert into ora_test_data_generator_values
     (otdg_category, otdg_value)
+  select 'state_us'
+        , column_value
+     from table(c_state_us)
+  ;
+
+  insert into ora_test_data_generator_values
+    (otdg_category, otdg_value)
+  select 'currency_code'
+        , column_value
+     from table(c_currency_code)
+  ;
+
+  insert into ora_test_data_generator_values
+    (otdg_category, otdg_value)
   select 'currency_name'
         , column_value
      from table(c_currency_name)
@@ -2945,6 +3105,20 @@ begin
   select 'currency_symbol'
         , column_value
      from table(c_currency_symbol)
+  ;
+
+  insert into ora_test_data_generator_values
+    (otdg_category, otdg_value)
+  select 'country'
+        , column_value
+     from table(c_country)
+  ;
+
+  insert into ora_test_data_generator_values
+    (otdg_category, otdg_value)
+  select 'country_code'
+        , column_value
+     from table(c_country_code)
   ;
 
   insert into ora_test_data_generator_values

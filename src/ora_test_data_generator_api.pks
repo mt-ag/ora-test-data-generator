@@ -60,11 +60,23 @@ create or replace package ora_test_data_generator_api as
     return t_value
   ;
   
+  function get_currency_code
+    return t_value
+  ;
+
   function get_currency_name
     return t_value
   ;
   
   function get_currency_symbol
+    return t_value
+  ;
+
+  function get_country
+    return t_value
+  ;
+
+  function get_country_code
     return t_value
   ;
   
