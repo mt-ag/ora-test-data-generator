@@ -1,1 +1,4 @@
 .build-oracle.json
+_ora-test-data-generator
+*.zip
+.DS_Store
