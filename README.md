@@ -6,7 +6,7 @@ The majority of the example values are copied from [falso](https://github.com/ng
 
 ## Installation
 
-- Download the zip file from the [latest release](https://github.com/mt-ag/ora-test-data-generator/releasess).
+- Download the zip file from the [latest release](https://github.com/mt-ag/ora-test-data-generator/releases).
 - Run `install.sql` in your database
 
 To uninstall run `uninstall.sql`
